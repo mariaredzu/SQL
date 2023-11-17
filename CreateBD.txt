@@ -1,0 +1,11 @@
+CREATE DATABASE ExercisesDB;
+
+USE ExercisesDB;
+
+CREATE TABLE Matter (codemat varchar(25) PRIMARY KEY, wording varchar(255), coef FLOAT);
+
+CREATE TABLE Student (numstud int PRIMARY KEY, name varchar(255), firstname varchar(255), dateofbirth DATE, street varchar(255), postalcod varchar(255), city varchar(255));
+
+CREATE TABLE Test (numtest int PRIMARY KEY, testdate DATE, place varchar(25), FOREIGN KEY (place) REFERENCES Matter(codemat));
+
+CREATE TABLE Notation ( numstud int NOT NULL, numtest int NOT NULL, score FLOAT, FOREIGN KEY (numstud) REFERENCES Student(numstud), FOREIGN KEY (numtest) REFERENCES Test(numtest), PRIMARY KEY (numstud, numtest));

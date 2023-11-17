@@ -1,0 +1,55 @@
+USE ExercisesDB;
+
+INSERT INTO Matter (codemat, wording, coef) VALUES
+('M1', 'Mathematics', 1.5),
+('M2', 'Physics', 1.0),
+('M3', 'Chemistry', 1.8);
+
+INSERT INTO Student (numstud, name, firstname, dateofbirth, street, postalcod, city) VALUES
+(1, 'Dupont', 'Alice', '1995-02-10', '123 Main St', '12345', 'Lyon'),
+(2, 'Durand', 'Bob', '1994-05-15', '456 Oak St', '67890', 'Valladolid'),
+(3, 'Martin', 'Charlie', '1996-08-20', '789 Pine St', '54321', 'Seville'),
+(4, 'Gómez', 'Sofía', '1993-12-01', '987 Elm St', '13579', 'Lyon'),
+(5, 'Pérez', 'Adrian', '1997-03-25', '654 Birch St', '24680', 'Valladolid'),
+(6, 'González', 'Isabela', '1992-06-05', '321 Cedar St', '97531', 'Lyon'),
+(7, 'López', 'Rafael', '1998-09-15', '234 Maple St', '86420', 'Seville');
+
+INSERT INTO Test (numtest, testdate, place) VALUES
+(1, '2014-01-09', 'M1'),
+(2, '2014-04-15', 'M2'),
+(3, '2014-06-30', 'M3'),
+(4, '2014-09-10', 'M1'),
+(5, '2014-11-05', 'M3');
+
+INSERT INTO Notation (numstud, numtest, score) VALUES
+(2, 1, 41),
+(3, 1, 88),
+(4, 1, 95),
+(5, 1, 53),
+(7, 1, 79),
+(1, 2, 72),
+(2, 2, 10),
+(3, 2, 45),
+(4, 2, 64),
+(5, 2, 84),
+(6, 2, 92),
+(7, 2, 50),
+(2, 3, 78),
+(3, 3, 98),
+(4, 3, 37),
+(5, 3, 99),
+(6, 3, 30),
+(7, 3, 58),
+(1, 4, 86),
+(2, 4, 31),
+(3, 4, 76),
+(4, 4, 48),
+(5, 4, 82),
+(6, 4, 74),
+(7, 4, 89),
+(1, 5, 69),
+(2, 5, 59),
+(3, 5, 18),
+(4, 5, 20),
+(5, 5, 55),
+(7, 5, 94);

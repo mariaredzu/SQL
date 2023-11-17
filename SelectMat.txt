@@ -1,0 +1,5 @@
+USE ExercisesDB;
+
+SELECT wording, CONCAT(TRUNCATE((coef * 100), 2), '%') AS perc_coef FROM Matter;
+
+SELECT SUM(coef) AS total_coef FROM Matter;

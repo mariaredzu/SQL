@@ -1,0 +1,23 @@
+USE ExercisesDB;
+
+SELECT COUNT(*) AS total_tests FROM Test;
+
+SELECT n.score, s.firstname, s.name FROM Notation n JOIN Student s ON n.numstud = s.numstud;
+
+SELECT n.score, s.firstname, s.name, m.wording FROM Notation n JOIN Student s ON n.numstud = s.numstud JOIN Test t ON n.numtest = t.numtest JOIN Matter m ON t.place = m.codemat;
+
+SELECT n.score, s.firstname, s.name FROM Notation n JOIN Student s ON n.numstud = s.numstud WHERE n.score >= 10;
+
+SELECT s.firstname, s.name FROM Notation n JOIN Student s ON n.numstud = s.numstud WHERE n.score = 20;
+
+SELECT s.firstname, s.name, AVG(n.score) AS avg_score FROM Notation n JOIN Student s ON n.numstud = s.numstud GROUP BY s.firstname, s.name;
+
+SELECT * FROM Test WHERE testdate BETWEEN '2014-01-01' AND '2014-06-30';
+
+SELECT t.numtest, t.testdate, t.place, m.wording FROM Test t JOIN Matter m ON t.place = m.codemat;
+
+SELECT s.firstname, s.name, AVG(n.score) AS avg_score FROM Notation n JOIN Student s ON n.numstud = s.numstud GROUP BY s.firstname, s.name ORDER BY avg_score DESC;
+
+SELECT m.wording, AVG(n.score) AS avg_score FROM Notation n JOIN Test t ON n.numtest = t.numtest JOIN Matter m ON t.place = m.codemat GROUP BY m.wording HAVING COUNT(t.numtest) > 1;
+
+SELECT t.numtest, AVG(n.score) AS avg_score FROM Notation n JOIN Test t ON n.numtest = t.numtest GROUP BY t.numtest HAVING COUNT(n.numstud) < 6;
